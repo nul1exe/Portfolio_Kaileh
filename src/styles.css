@@ -160,15 +160,64 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
 
 .profile-grid, .programming-hero, .design-hero { display: grid; gap: 1.2rem; }
 .about-intro {
+  position: relative;
+  width: 100vw;
+  max-width: none;
+  min-height: calc(105dvh - var(--header-space));
+  height: calc(105dvh - var(--header-space));
+  /* min-height: 85vh;
+  height: 85vh; */
+  padding-top: calc(var(--header-space) * 0.5);
   padding-left: clamp(0.2rem, 2vw, 1.2rem);
+  padding-right: 0;
+  padding-bottom: clamp(1rem, 2.2vh, 1.8rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* .about-copy-column {
   width: min(700px, 46vw);
   max-width: min(700px, 46vw);
-  min-height: calc(100dvh - var(--header-space));
-  padding-top: calc(var(--header-space) * 0.5);
-  padding-bottom: clamp(1rem, 2.2vh, 1.8rem);
+  margin: 0 clamp(1.6rem, 4vw, 3.2rem) 0 0;
+  padding-left: clamp(0.6rem, 2vw, 1.4rem);
+  padding-right: clamp(0.6rem, 2vw, 1.4rem); */
+  /* z-index: 2; /* stay above the positioned visual 
+  align-self: center;
+  justify-self: center;
+} */
+
+.about-copy-column {
+  width: min(620px, 42vw);
+  max-width: min(620px, 42vw);
+  margin: 0 auto;
+  padding-left: clamp(0.6rem, 2vw, 1.4rem);
+  padding-right: clamp(0.6rem, 2vw, 1.4rem);
+  z-index: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.about-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.about-visual img {
+  display: block;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: right center;
 }
 .about-greeting {
   margin: 0;
@@ -202,8 +251,8 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
 .about-copy {
   margin: 0;
   max-width: 100%;
-  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
-  line-height: 1.64;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--muted);
   text-align: justify;
   text-justify: inter-word;
@@ -214,6 +263,24 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
   margin-left: auto; /* align to right half */
   padding-left: clamp(0.6rem, 2vw, 1.4rem);
   padding-right: clamp(0.6rem, 2vw, 1.4rem);
+}
+
+/* Visual block shown alongside the details panel (left side of profile-details) */
+.details-visual {
+  width: min(520px, 40vw);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: clamp(0.6rem, 2vw, 1.4rem);
+  pointer-events: none;
+  transform: translateX(-3vw);
+}
+
+.details-visual img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 .details-title {
   margin: 0 0 0.6rem 0;
@@ -267,12 +334,64 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
   padding-bottom: clamp(1rem, 2vh, 1.6rem);
 }
 
+@media (max-width: 920px) {
+  .about-intro {
+    width: 100%;
+    height: auto;
+    min-height: calc(100dvh - var(--header-space));
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: clamp(0.2rem, 2vw, 1.2rem);
+    display: flex;
+  }
+
+  .about-copy-column {
+    width: 100%;
+    max-width: 100%;
+    padding-left: clamp(0.6rem, 2vw, 1.2rem);
+    padding-right: clamp(0.6rem, 2vw, 1.2rem);
+  }
+
+  .about-visual {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .about-visual img {
+    width: min(100%, 460px);
+    height: auto;
+    object-fit: contain;
+  }
+
+  .details-visual {
+    position: static;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .details-visual img {
+  width: min(100%, 420px);
+    height: auto;
+    object-fit: contain;
+  }
+}
+
 .about-contacts {
   margin-top: 1.2rem;
   display: flex;
-  gap: 0.8rem;
-  flex-wrap: nowrap;
-  align-items: center;
+   gap: 0.75rem;
+  /* width: min(700px, 46vw); */
+  width: min(620px, 42vw);
+  max-width: min(700px, 46vw);
+  min-height: 100%;
+  justify-self: start;
+  padding-left: clamp(0.6rem, 2vw, 1.4rem);
+  padding-right: clamp(0.6rem, 2vw, 1.4rem);
 }
 .about-contacts a {
   color: var(--text);

@@ -1,5 +1,7 @@
 import hero from '../assets/Portfolio-HomeFinal.png';
 import hiImg from '../assets/hi2.png';
+import aboutMeDesign from '../assets/abtmedesign.png';
+import skillsDesign from '../assets/skillsdesign.png';
 import htmlLogo from '../assets/html.png';
 import cssLogo from '../assets/css.png';
 import jsLogo from '../assets/JS.png';
@@ -41,23 +43,31 @@ export function HomePage() {
 
       <div className="page">
       <section className="about-intro section-stack">
-        <h2 className="about-greeting"><img src={hiImg} alt="Hi" className="about-greeting-image" /></h2>
-        <div className="about-separator" aria-hidden="true" />
-        <p className="about-copy">I'm Kylie Marie Loyola Abueva, a junior developer who enjoys building clean, useful digital experiences where code and design work together. <br /><br />I develop web and mobile applications, create user-focused interfaces, and explore creative visuals that combine functionality with aesthetics. From coding systems to designing interactive experiences, I enjoy turning ideas into something people can actually use and connect with. <br /><br />This portfolio is a collection of my projects, experiments, and creative works — where technology meets design.</p>
-        <div className="about-contacts" aria-label="Contact links">
-          <a href="mailto:your.kyliemarie.abueva@gmail.com" aria-label="Email" title="Email">
-            <EmailIcon />
-          </a>
-          <a href="https://www.linkedin.com/in/kylie-abueva-4a8998332/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
-            <LinkedinIcon />
-          </a>
-          <a href="https://github.com/nul1exe" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
-            <GithubIcon />
-          </a>
+        <div className="about-copy-column">
+          <h2 className="about-greeting"><img src={hiImg} alt="Hi" className="about-greeting-image" /></h2>
+          <div className="about-separator" aria-hidden="true" />
+          <p className="about-copy">I'm Kylie Marie Loyola Abueva, a junior developer who enjoys building clean, useful digital experiences where code and design work together. <br /><br />I develop web and mobile applications, create user-focused interfaces, and explore creative visuals that combine functionality with aesthetics. From coding systems to designing interactive experiences, I enjoy turning ideas into something people can actually use and connect with. <br /><br />This portfolio is a collection of my projects, experiments, and creative works — where technology meets design.</p>
+          <div className="about-contacts" aria-label="Contact links">
+            <a href="mailto:your.kyliemarie.abueva@gmail.com" aria-label="Email" title="Email">
+              <EmailIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/kylie-abueva-4a8998332/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
+              <LinkedinIcon />
+            </a>
+            <a href="https://github.com/nul1exe" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
+              <GithubIcon />
+            </a>
+          </div>
+        </div>
+        <div className="about-visual" aria-hidden="true">
+          <img src={aboutMeDesign} alt="" />
         </div>
       </section>
       
       <section className="profile-details section-stack">
+        <div className="details-visual" aria-hidden="true">
+          <img src={skillsDesign} alt="" />
+        </div>
         <div className="details-panel">
           <h3 className="details-title">Skills</h3>
           <div className="details-separator" aria-hidden="true" />

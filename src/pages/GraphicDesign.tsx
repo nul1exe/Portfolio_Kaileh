@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import topPartDesign from '../assets/toppartDesign.png';
+import abtMeDesignWbg from '../assets/abtmedesign.png';
+import skillsDesignWbg from '../assets/skillsdesign.png';
 import DIIN from '../assets/designs/DIIN_tp.png';
 import Compass from '../assets/designs/compass.jpg';
 import IDFAi from '../assets/designs/IDFAiLogo.png';
@@ -17,21 +19,23 @@ import KylieArt from '../assets/designs/Portflio-Home2.png';
 import Jersey from '../assets/designs/softball-jersey.png';
 
 const designs = [
-  { title: 'DIIN', src: DIIN },
   { title: 'Compass', src: Compass },
+  { title: 'About Me', src: abtMeDesignWbg },
+  { title: 'DesignXCode', src: skillsDesignWbg },
+  { title: 'DIIN', src: DIIN },
   { title: 'IDFAi', src: IDFAi },
-  { title: 'Kaonbrader', src: Kaonbrader },
   { title: 'ML Logo', src: MLLogo },
+  { title: 'Kaonbrader', src: Kaonbrader },
   { title: 'Jagdusa Banner', src: Jagdusa },
   { title: 'OJT Shirt', src: OJTShirt },
   { title: 'Komsai Lanyard', src: Komsai },
   { title: 'Poster', src: Poster },
-  { title: 'Hazhen', src: Hazhen },
   { title: 'Kalimari', src: Kalimari },
   { title: 'Olango Island', src: Olango },
   { title: 'Kylie Chibi', src: KylieChibi },
   { title: 'Kylie Art', src: KylieArt },
   { title: 'Jersey', src: Jersey },
+  { title: 'Hazhen', src: Hazhen },
 ];
 
 export function GraphicDesignPage() {

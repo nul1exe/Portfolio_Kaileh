@@ -93,9 +93,7 @@ function ProjectImageCard({ project }: { project: ProjectCard }) {
           <h2>{project.title}</h2>
           <p>{project.description}</p>
         </div>
-        <a className="program-card-link" href={project.github} target="_blank" rel="noreferrer">
-          GitHub Repository
-        </a>
+        
       </div>
     </motion.article>
   );
