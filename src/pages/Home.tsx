@@ -36,19 +36,32 @@ function GithubIcon() {
   );
 }
 
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.65 0 3 1.35 3 3v10c0 1.65-1.35 3-3 3H7c-1.65 0-3-1.35-3-3V7c0-1.65 1.35-3 3-3zm11.5 1a1.5 1.5 0 100 3 1.5 1.5 0 000-3zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z" />
+    </svg>
+  );
+}
+
 export function HomePage() {
   return (
     <>
-      <section className="hero hero-with-image" style={{ backgroundImage: `url(${hero})` }} aria-label="Homepage background" />
+      <section className="hero hero-with-image" style={{ backgroundImage: `url(${hero})` }} aria-label="Homepage background"
+      >
+  <a href="#about-me" className="scroll-down" aria-label="Scroll to About Me">
+    ↓
+  </a>
+</section>
 
       <div className="page">
-      <section className="about-intro section-stack">
+      <section id="about-me" className="about-intro section-stack">
         <div className="about-copy-column">
           <h2 className="about-greeting"><img src={hiImg} alt="Hi" className="about-greeting-image" /></h2>
-          <div className="about-separator" aria-hidden="true" />
-          <p className="about-copy">I'm Kylie Marie Loyola Abueva, a junior developer who enjoys building clean, useful digital experiences where code and design work together. <br /><br />I develop web and mobile applications, create user-focused interfaces, and explore creative visuals that combine functionality with aesthetics. From coding systems to designing interactive experiences, I enjoy turning ideas into something people can actually use and connect with. <br /><br />This portfolio is a collection of my projects, experiments, and creative works — where technology meets design.</p>
+          <div className="about-separollrator" aria-hidden="true" />
+          <p className="about-copy">The name's Kylie Marie Loyola Abueva. I am a Computer Science graduate who likes both software development and graphic design. <br /><br />I develop web and mobile applications, occasionally work on embedded systems, and create graphic designs that complement my projects.<br />You could say I'm a bit of a two-timer—not in the dating sense, but in the sense that I split my time between developing software and designing interactive experiences. <br /><br />I'm continuously learning new technologies and seeking opportunities to grow as a developer and designer while contributing to meaningful projects.<br /><br />This portfolio is a collection of my projects and creative works—where technology meets design.</p>
           <div className="about-contacts" aria-label="Contact links">
-            <a href="mailto:your.kyliemarie.abueva@gmail.com" aria-label="Email" title="Email">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kyliemarie.abueva@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email">
               <EmailIcon />
             </a>
             <a href="https://www.linkedin.com/in/kylie-abueva-4a8998332/" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
@@ -56,6 +69,9 @@ export function HomePage() {
             </a>
             <a href="https://github.com/nul1exe" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub">
               <GithubIcon />
+            </a>
+            <a href="https://www.instagram.com/teriyakaii" target="_blank" rel="noreferrer" aria-label="Instagram" title="Instagram">
+              <InstagramIcon />
             </a>
           </div>
         </div>
