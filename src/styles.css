@@ -303,6 +303,7 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
   object-position: right center;
 }
 .about-greeting {
+  /* margin-top: 1.5; */
   margin: 0;
   font-family: var(--font-family);
   font-weight: var(--fw-heading-strong);
@@ -314,6 +315,7 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
 
 /* Keep greeting area size while using an image */
 .about-greeting-image {
+  margin-top: 1rem;
   display: block;
   width: auto;
   height: clamp(3.2rem, 11vw, 7rem);
@@ -456,16 +458,17 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
   }
 
   .about-visual {
-    position: static;
-    width: 100vw;
+    display: none !important;
+    /* position: static;
+    width: 100vw; */
     /* height: auto;  */
-    margin-top: 0;
+    /* margin-top: 0; */
     /* justify-content: center; */
-  margin-left: calc(50% - 50vw);
+  /* margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-    order: 1;
+    order: 1; */
     /* pointer-events: auto; */
-  overflow: hidden;
+  /* overflow: hidden; */
   }
 
   .about-visual img {

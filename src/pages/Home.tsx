@@ -58,7 +58,7 @@ export function HomePage() {
       <section id="about-me" className="about-intro section-stack">
         <div className="about-copy-column">
           <h2 className="about-greeting"><img src={hiImg} alt="Hi" className="about-greeting-image" /></h2>
-          <div className="about-separollrator" aria-hidden="true" />
+          <div className="about-separator" aria-hidden="true" />
           <p className="about-copy">The name's Kylie Marie Loyola Abueva. I am a Computer Science graduate who likes both software development and graphic design. <br /><br />I develop web and mobile applications, occasionally work on embedded systems, and create graphic designs that complement my projects.<br />You could say I'm a bit of a two-timer—not in the dating sense, but in the sense that I split my time between developing software and designing interactive experiences. <br /><br />I'm continuously learning new technologies and seeking opportunities to grow as a developer and designer while contributing to meaningful projects.<br /><br />This portfolio is a collection of my projects and creative works—where technology meets design.</p>
           <div className="about-contacts" aria-label="Contact links">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kyliemarie.abueva@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email">
