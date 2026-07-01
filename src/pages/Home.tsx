@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import hero from '../assets/Portfolio-HomeFinal.png';
 import hiImg from '../assets/hi2.png';
 import aboutMeDesign from '../assets/abtmedesign.png';
@@ -44,6 +45,19 @@ function InstagramIcon() {
   );
 }
 
+function ResumeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7 2h7l5 5v15H7V2zm7 1.5V8h4.5L14 3.5zM9 11h6v1.5H9V11zm0 3h6v1.5H9V14zm0 3h4v1.5H9V17z" />
+    </svg>
+  );
+}
+
+const sectionMotion = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
 export function HomePage() {
   return (
     <>
@@ -55,11 +69,27 @@ export function HomePage() {
 </section>
 
       <div className="page">
-      <section id="about-me" className="about-intro section-stack">
+      <motion.section
+        id="about-me"
+        className="about-intro section-stack"
+        variants={sectionMotion}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: 'easeOut' }}
+      >
         <div className="about-copy-column">
           <h2 className="about-greeting"><img src={hiImg} alt="Hi" className="about-greeting-image" /></h2>
           <div className="about-separator" aria-hidden="true" />
-          <p className="about-copy">The name's Kylie Marie Loyola Abueva. I am a Computer Science graduate who likes both software development and graphic design. <br /><br />I develop web and mobile applications, occasionally work on embedded systems, and create graphic designs that complement my projects.<br />You could say I'm a bit of a two-timer—not in the dating sense, but in the sense that I split my time between developing software and designing interactive experiences. <br /><br />I'm continuously learning new technologies and seeking opportunities to grow as a developer and designer while contributing to meaningful projects.<br /><br />This portfolio is a collection of my projects and creative works—where technology meets design.</p>
+          <div className="about-copy-mobile" aria-label="About summary for mobile and tablet">
+            <p className="about-copy about-copy-mobile-intro">The name's Kylie Marie Loyola Abueva. I am a Computer Science graduate who likes both software development and graphic design.</p>
+            <a href="/Abueva_Resume.pdf" target="_blank" rel="noopener noreferrer" className="button primary about-resume-button">
+              <strong>View Resume</strong>
+            </a>
+            <p className="about-copy about-copy-mobile-rest">I develop web and mobile applications, occasionally work on embedded systems, and create graphic designs that complement my projects.<br />You could say I'm a bit of a two-timer—not in the dating sense, but in the sense that I split my time between developing software and designing interactive experiences. <br /><br />I'm continuously learning new technologies and seeking opportunities to grow as a developer and designer while contributing to meaningful projects.<br /><br />This portfolio is a collection of my projects and creative works—where technology meets design.</p>
+          </div>
+
+          <p className="about-copy about-copy-desktop">The name's Kylie Marie Loyola Abueva. I am a Computer Science graduate who likes both software development and graphic design. <br /><br />I develop web and mobile applications, occasionally work on embedded systems, and create graphic designs that complement my projects.<br />You could say I'm a bit of a two-timer—not in the dating sense, but in the sense that I split my time between developing software and designing interactive experiences. <br /><br />I'm continuously learning new technologies and seeking opportunities to grow as a developer and designer while contributing to meaningful projects.<br /><br />This portfolio is a collection of my projects and creative works—where technology meets design.</p>
           <div className="about-contacts" aria-label="Contact links">
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kyliemarie.abueva@gmail.com" target="_blank" rel="noreferrer" aria-label="Email" title="Email">
               <EmailIcon />
@@ -74,13 +104,24 @@ export function HomePage() {
               <InstagramIcon />
             </a>
           </div>
+
         </div>
-        <div className="about-visual" aria-hidden="true">
+        <div className="about-visual" aria-label="Resume display">
           <img src={aboutMeDesign} alt="" />
+          <a href="/Abueva_Resume.pdf" target="_blank" rel="noreferrer" className="button primary resume-button">
+            <strong>View Resume</strong>
+          </a>
         </div>
-      </section>
+      </motion.section>
       
-      <section className="profile-details section-stack">
+      <motion.section
+        className="profile-details section-stack"
+        variants={sectionMotion}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: 'easeOut', delay: 0.05 }}
+      >
         <div className="details-visual" aria-hidden="true">
           <img src={skillsDesign} alt="" />
         </div>
@@ -118,7 +159,7 @@ export function HomePage() {
             <div>Civil Service Exam (Professional Level) Passer - 2026</div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
     </>
   );

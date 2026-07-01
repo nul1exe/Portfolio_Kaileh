@@ -288,6 +288,7 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
   top: 0;
   right: 0;
   bottom: 0;
+  width: min(52vw, 820px);
   display: flex;
   align-items: stretch;
   justify-content: flex-end;
@@ -298,9 +299,58 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
 .about-visual img {
   display: block;
   height: 100%;
-  width: auto;
+  width: 100%;
   object-fit: cover;
   object-position: right center;
+}
+
+.resume-button {
+  position: absolute;
+  top: 61%;
+  left: 51.5%;
+  width: min(6.3rem, 14vw);
+  min-height: 2.2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0;
+  background: rgba(255, 239, 161, 0.92);
+  border: 1px solid rgba(146, 108, 8, 0.18);
+  box-shadow: 0 10px 22px rgba(96, 65, 10, 0.12);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2f220f;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.resume-button-mobile {
+  position: static;
+  width: auto;
+  min-height: 2.75rem;
+  padding: 0 0.95rem;
+  transform: none;
+  border-radius: 999px;
+  display: none;
+  flex-shrink: 0;
+}
+
+.about-contacts a.resume-button-mobile {
+  display: none;
+}
+
+.resume-button:hover,
+.resume-button:focus-visible {
+  transform: translate(-50%, -50%) scale(1.05);
+  background: rgba(255, 232, 131, 0.98);
+  border-color: rgba(146, 108, 8, 0.28);
+  box-shadow: 0 14px 28px rgba(96, 65, 10, 0.2);
+}
+
+.resume-button:focus-visible {
+  outline: none;
 }
 .about-greeting {
   /* margin-top: 1.5; */
@@ -341,6 +391,20 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
   color: var(--muted);
   text-align: justify;
   text-justify: inter-word;
+}
+
+.about-copy-mobile {
+  display: none;
+}
+
+.about-copy-mobile-intro,
+.about-copy-mobile-rest,
+.about-copy-desktop {
+  margin: 0;
+}
+
+.about-resume-button {
+  display: none;
 }
 
 .details-panel {
@@ -459,22 +523,58 @@ main { padding: 0.8rem 1.25rem 1.25rem; }
 
   .about-visual {
     display: none !important;
-    /* position: static;
-    width: 100vw; */
-    /* height: auto;  */
-    /* margin-top: 0; */
-    /* justify-content: center; */
-  /* margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-    order: 1; */
-    /* pointer-events: auto; */
-  /* overflow: hidden; */
   }
 
-  .about-visual img {
-    width: min(100%, 520px);
-    height: auto;
-    object-fit: contain;
+  .about-copy-desktop {
+    display: none;
+  }
+
+  .about-copy-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+    width: 100%;
+  }
+
+  .about-resume-button {
+    display: inline-flex;
+    width: fit-content;
+    align-self: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 2.35rem;
+    padding: 0.58rem 1rem;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+
+  .resume-button {
+    top: 66%;
+    left: 51.5%;
+    width: min(5.6rem, 34vw);
+    min-height: 2.05rem;
+    transform: translate(-50%, -50%);
+  }
+
+  .resume-button:hover,
+  .resume-button:focus-visible {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  .resume-button-mobile {
+    display: inline-flex;
+    position: static;
+    transform: none;
+    width: auto;
+    min-height: 2.5rem;
+    padding: 0 0.85rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+  }
+
+  .resume-button-mobile:hover,
+  .resume-button-mobile:focus-visible {
+    transform: scale(1.05);
   }
 
   .about-greeting {

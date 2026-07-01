@@ -60,6 +60,11 @@ const diinImages = [
   { src: diinwebProject, alt: 'DIIN Web preview' },
 ];
 
+const sectionMotion = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
+
 function ProjectImageCard({ project }: { project: ProjectCard }) {
   const isDiin = project.title === 'DIIN';
   const [diinIndex, setDiinIndex] = useState(0);
@@ -74,7 +79,15 @@ function ProjectImageCard({ project }: { project: ProjectCard }) {
   };
 
   return (
-    <motion.article className="program-card" whileHover={{ y: -4 }} transition={{ type: 'spring', stiffness: 280, damping: 22 }}>
+    <motion.article
+      className="program-card"
+      variants={sectionMotion}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      whileHover={{ y: -4 }}
+    >
       <div className="program-card-media">
         <img src={currentImage.src} alt={currentImage.alt} className="program-card-image" />
         {isDiin && (
@@ -102,12 +115,19 @@ function ProjectImageCard({ project }: { project: ProjectCard }) {
 export function ProgrammingPage() {
   return (
     <div className="page programming-page">
-      <section className="panel section-stack programming-hero programming-hero-card">
+      <motion.section
+        className="panel section-stack programming-hero programming-hero-card"
+        variants={sectionMotion}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: 'easeOut' }}
+      >
         <div className="programming-hero-copy">
           <p>Scroll down to see the projects I've worked on throughout my college journey.</p>
         </div>
         <img src={topPartDesign} alt="Programming decoration" className="programming-hero-image" />
-      </section>
+      </motion.section>
 
       <section className="program-grid" aria-label="Programming projects">
         {projectCards.map((project) => (

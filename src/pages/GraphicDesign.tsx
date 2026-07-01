@@ -11,6 +11,11 @@ import Jagdusa from '../assets/designs/JagdusaBanner.png';
 import OJTShirt from '../assets/designs/OJT-Shirt4.png';
 import Komsai from '../assets/designs/KomsaiLanyardQR.png';
 import Poster from '../assets/designs/poster.jpg';
+import CinemaBoothPosterCS from '../assets/designs/cscinebooth.jpg';
+import CinemaBoothPosterCS1 from '../assets/designs/cscinebooth1.jpg';
+import WelcomeCSPoster from '../assets/designs/csposter.jpg';
+import GraduationTarpGeraldine from '../assets/designs/GraduationTarp_GERALDINE.png';
+import GraduationTarpMia from '../assets/designs/GraduationTarp_MIA.png';
 import Hazhen from '../assets/designs/HazhenPinkBlueBGLogo.png';
 import Kalimari from '../assets/designs/kalimari.png';
 import Olango from '../assets/designs/Olango Island art.png';
@@ -35,23 +40,49 @@ const designs = [
   { title: 'Kylie Chibi', src: KylieChibi },
   { title: 'Kylie Art', src: KylieArt },
   { title: 'Jersey', src: Jersey },
+  { title: 'Cinema Booth Poster CS', src: CinemaBoothPosterCS },
+  { title: 'Cinema Booth Poster CS1', src: CinemaBoothPosterCS1 },
+  { title: 'Welcome CS Poster', src: WelcomeCSPoster },
+  { title: 'Graduation Tarpaulin', src: GraduationTarpGeraldine },
+  { title: 'Graduation Tarpaulin', src: GraduationTarpMia },
   { title: 'Hazhen', src: Hazhen },
 ];
+
+const sectionMotion = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export function GraphicDesignPage() {
   return (
     <div className="page graphic-design-page">
-      <section className="panel section-stack design-hero design-hero-card">
+      <motion.section
+        className="panel section-stack design-hero design-hero-card"
+        variants={sectionMotion}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.55, ease: 'easeOut' }}
+      >
         <div className="design-hero-copy">
           <p className="eyebrow">Branding Design | Print &amp; Marketing Design | Apparel Design | Digital Illustration</p>
           <p>Take a look at some of the designs I've created along the way.</p>
         </div>
         <img src={topPartDesign} alt="Graphic design decoration" className="design-hero-image" />
-      </section>
+      </motion.section>
 
       <section className="design-grid" aria-label="Graphic design gallery">
-        {designs.map((d) => (
-          <motion.figure key={d.title} className="design-card" whileHover={{ y: -6 }}>
+        {designs.map((d, index) => (
+          <motion.figure
+            key={`${d.title}-${index}`}
+            className="design-card"
+            variants={sectionMotion}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            whileHover={{ y: -6 }}
+          >
             <div className="design-media">
               <img src={d.src} alt={d.title} />
             </div>
